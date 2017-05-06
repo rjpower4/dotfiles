@@ -1,68 +1,88 @@
 " Vimrc file for Rolfe Power
 
+" Increase the undo limit
 set history=500
 
+" Check the filetype being edited and use that indent scheme
 filetype plugin on
 filetype indent on
 
-set autoread
+" Keep the cursor in the middle of the screen when possible
+set so=999
 
-set so=8
-
+" Allow tab completion menu to show up showing possibilities
 set wildmenu
 
+" Display line numer information
 set ruler
 
+" Make backspace work like it should
 set backspace=eol,start,indent
+
+" Wrap lines on cursor keys
 set whichwrap+=<,>,h,l
 
+" Ignore case when searching with all lowers, but not when include uppers
 set ignorecase
-
 set smartcase
 
+" Highlight the search results
 set hlsearch
 
+" Begin searching when letters are typed
 set incsearch
 
-set lazyredraw
-
+" Show the matching bracket when a bracket is inserted if on screen
 set showmatch
 set mat=2
 
+" No sound or flash every 3 god-damn seconds
 set noerrorbells
-set novisualbell
+set visualbell
+set t_vb=
 
+" Enable syntax highlighting
 syntax enable
+
+" Visual crap
 colorscheme desert
 set background=dark
 
+" No one uses tabs, replaces with spaces 
 set expandtab
+
+" Backspace will delete 4 spaces if they were inserted on a tab
 set smarttab
 
+" Tabs are four spaces. Period.
 set shiftwidth=4
 set tabstop=4
 
+" Automatically copies current indentation 
 set ai
+
+" Indents correctly on (most) programs
 set si
+
+" Wraps lines too long to read. Does not change actual text buffer.
 set wrap
 
+" Search with space because ain't nobody want arthritis from hitting / all the
+" time
 map <space> /
 
+" Display the number of steps away from the current line every other visible
+" line is
 set relativenumber
+
+" Display the line number of the current line
 set number
 
+" You get a status line, you get a status line, everybody gets a status line
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE '
-    endif
-    return ''
-endfunction
-
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Improve the splitting behavior
 set splitbelow
@@ -73,7 +93,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Disable the arrow keys (here we go)
-
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
