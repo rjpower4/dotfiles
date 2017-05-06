@@ -16,6 +16,11 @@ set wildmenu
 " Display line numer information
 set ruler
 
+" Enable code folding
+set foldmethod=indent
+set foldlevel=99
+nnoremap <tab> za
+
 " Make backspace work like it should
 set backspace=eol,start,indent
 
