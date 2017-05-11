@@ -1,5 +1,8 @@
 " Vimrc file for Rolfe Power
 
+" Search down into subfolders
+set path+=**
+
 " Increase the undo limit
 set history=500
 
