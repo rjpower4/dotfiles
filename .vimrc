@@ -11,7 +11,7 @@ filetype plugin on
 filetype indent on
 
 " Keep the cursor in the middle of the screen when possible
-set so=999
+" set so=999
 
 " Allow tab completion menu to show up showing possibilities
 set wildmenu
