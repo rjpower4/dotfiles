@@ -1,2 +1,5 @@
-# .vim
-Vim files
+# Config Files
+
+## Useful Software
+
+ - Rofi
