@@ -5,6 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.BinarySpacePartition
@@ -55,6 +56,7 @@ myManageHook = composeAll
 
 myLayouts = avoidStruts $
     smartSpacingWithEdge 5 $ emptyBSP |||
+    Tall 1 (3/100) (1/2) |||
     tabbed shrinkText tabConfig |||
     Full
 
@@ -101,6 +103,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [ ((modMask .|. shiftMask, xK_Return),
         spawn $ XMonad.terminal conf)
 
+    -- Spawn web browser
+    , ((modMask, xK_i), spawn "firefox")
+    , ((modMask .|. shiftMask, xK_i), spawn "qutebrowser")
+
+    -- Spawn window switcher
+    , ((modMask .|. shiftMask, xK_p),
+        spawn "rofi -show window")
+
     -- Spawn the launcher
     , ((modMask, xK_p), 
         spawn myLauncher)
@@ -143,10 +153,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_comma), windows W.swapUp)
 
     -- Shrink the master area.
-    -- , ((modMask .|. shiftMask, xK_h), sendMessage Shrink)
+    , ((modMask .|. controlMask .|. shiftMask, xK_h), sendMessage Shrink)
 
     -- Expand the master area.
-    -- , ((modMask .|. shiftMask, xK_l), sendMessage Expand)
+    , ((modMask .|. controlMask .|. shiftMask, xK_l), sendMessage Expand)
 
     -- Push window back into tiling.
     , ((modMask, xK_t),
@@ -243,7 +253,7 @@ myStartupHook = do
 
 main = do
     xmproc <- spawnPipe "xmobar"
-    xmonad $ defaults {
+    xmonad $ ewmh defaults {
         logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
             , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
