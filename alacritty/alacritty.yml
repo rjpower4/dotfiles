@@ -1,5 +1,8 @@
 window:
     decorations: none
+    padding: 
+        x: 6
+        y: 6
 
 shell:
     program: /usr/bin/zsh
