@@ -1,0 +1,15 @@
+﻿---
+AlwaysBreakAfterReturnType: None
+BasedOnStyle: LLVM
+BraceWrapping:
+    AfterEnum: true
+    AfterStruct: true
+    AfterClass: true
+    AfterControlStatement: false
+    AfterFunction: true
+    AfterNamespace: true
+    AfterUnion: true
+BreakBeforeBraces: Custom
+TabWidth: '2'
+UseTab: Always
+...
