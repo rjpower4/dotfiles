@@ -1,10 +1,15 @@
-# Config Files
+# Generic Dotfile Collection
 
-## Useful Software
+These are the dotfiles that I typically use. I have removed any that seemed *too specific*
+for this repository.
 
- - Rofi
- - XMonad
- - XMobar
- - Neovim
- - Zathura
- - VLC
+## Software I usually install
+
+* Spacemacs
+* Alacritty
+* Rust/Cargo
+* Neovim
+* tmux
+* clang-format
+
+Font of choice: **Fira Code** (really don't bother looking for anything else)
