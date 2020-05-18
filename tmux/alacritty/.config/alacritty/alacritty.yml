@@ -1,0 +1,44 @@
+window:
+    decorations: none
+    padding: 
+        x: 6
+        y: 6
+
+shell:
+    program: /usr/bin/zsh
+
+font:
+    size: 12
+    normal:
+        family: Fira Code
+
+
+colors:
+  # Default colors
+  primary:
+    background: '#2D2D2D'
+    foreground: '#CCCCCC'
+
+  # Normal colors
+  normal:
+    black: '#000000'
+    red: '#F2777A'
+    green: '#99CC99'
+    yellow: '#F99157'
+    blue: '#6699CC'
+    magenta: '#CC99CC'
+    cyan: '#66CCCC'
+    white: '#515151'
+
+  # Bright colors
+  bright:
+    black: '#666666'
+    red: '#FF3334'
+    green: '#9EC400'
+    yellow: '#FFCC66'
+    blue: '#6699CC'
+    magenta: '#B777E0'
+    cyan: '#54CED6'
+    white: '#393939'
+
+background_opacity: 0.9
