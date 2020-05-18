@@ -1,0 +1,36 @@
+#!/usr/bin/sh
+
+sxhkd &
+
+if [ -e "$HOME/.config/polybar/launch.sh" ]; then
+    $HOME/.config/polybar/launch.sh
+fi
+
+if [ -e "$HOME/.gtkrc-2.0" ]; then
+    $HOME/.gtkrc-2.0
+fi
+
+command -v flatpak && flatpak run com.dropbox.Client &
+command -v flameshot && flameshot &
+
+if [ -e "$HOME/.fehbg" ]; then
+    source "$HOME/.fehbg"
+else if [ -e "$HOME/Pictures/wallpapers/current" ]
+    feh --bg-fill "$HOME/Pictures/wallpapers/current"
+fi
+
+command -v compton && compton -b
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+bspc config border_width         3
+bspc config window_gap          10
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer false
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Emacs state=tiled
+bspc rule -a Zathura state=tiled
+bspc rule -a matplotlib state=floating
