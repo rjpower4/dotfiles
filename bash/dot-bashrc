@@ -26,7 +26,7 @@ hash bat && alias cat="bat"
 hash rg  && alias grep="rg"
 
 # Install Aliases
-if [ $(hash dnf) ]; then 
+if [ ! `hash dnf` ]; then 
     alias dnfcu="dnf check-update"
     alias dnfu="sudo dnf upgrade"
     alias dnfs="dnf search"

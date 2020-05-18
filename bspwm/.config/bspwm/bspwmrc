@@ -1,27 +1,20 @@
 #!/usr/bin/sh
 
 sxhkd &
-
-if [ -e "$HOME/.config/polybar/launch.sh" ]; then
-    $HOME/.config/polybar/launch.sh
-fi
-
-if [ -e "$HOME/.gtkrc-2.0" ]; then
-    $HOME/.gtkrc-2.0
-fi
-
-command -v flatpak && flatpak run com.dropbox.Client &
-command -v flameshot && flameshot &
+$HOME/.config/polybar/launch.sh
+$HOME/.gtkrc-2.0
+flatpak run com.dropbox.Client &
+flameshot &
 
 if [ -e "$HOME/.fehbg" ]; then
     source "$HOME/.fehbg"
-else if [ -e "$HOME/Pictures/wallpapers/current" ]
-    feh --bg-fill "$HOME/Pictures/wallpapers/current"
+else
+    feh --bg-fill '/home/rpower/Pictures/wallpapers/current'
 fi
 
-command -v compton && compton -b
+compton -b
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         3
 bspc config window_gap          10
