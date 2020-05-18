@@ -1,5 +1,0 @@
-configuration {
-    modi: "window,run,drun";
-    theme: "sidetab";
-    font: "JetBrains Mono 12";
-}
