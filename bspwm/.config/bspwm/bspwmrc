@@ -5,6 +5,8 @@ $HOME/.config/polybar/launch.sh
 $HOME/.gtkrc-2.0
 flatpak run com.dropbox.Client &
 flameshot &
+wmname LG3D
+xsetroot -cursor_name left_ptr
 
 if [ -e "$HOME/.fehbg" ]; then
     source "$HOME/.fehbg"
