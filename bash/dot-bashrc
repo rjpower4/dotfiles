@@ -21,12 +21,21 @@ export PATH="$HOME/.emacs.d/bin:$PATH" # Doom Emacs
 
 # RJ's aliases
 alias vim="nvim"
-hash exa && alias ls="exa"
-hash bat && alias cat="bat"
-hash rg  && alias grep="rg"
+
+if [ ! `command -v exa >/dev/null` ]; then
+    alias ls="exa"
+fi
+
+if [ ! `command -v bat >/dev/null` ]; then
+    alias cat="bat"
+fi
+
+if [ ! `command -v rg >/dev/null` ]; then
+    alias grep="rg"
+fi
 
 # Install Aliases
-if [ ! `hash dnf` ]; then 
+if [ ! `command -v dnf >/dev/null` ]; then 
     alias dnfcu="dnf check-update"
     alias dnfu="sudo dnf upgrade"
     alias dnfs="dnf search"
