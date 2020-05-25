@@ -6,6 +6,9 @@
 super + Return
 	urxvt
 
+super + Home
+    pcmanfm
+
 # browser
 super + slash
     firefox
