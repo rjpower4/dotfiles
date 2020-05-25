@@ -15,10 +15,6 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# Path additions
-export PATH="$HOME/.cargo/bin:$PATH"   # Rust
-export PATH="$HOME/.emacs.d/bin:$PATH" # Doom Emacs
-
 # RJ's aliases
 alias vim="nvim"
 hash exa && alias ls="exa"
