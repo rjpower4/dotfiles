@@ -18,20 +18,20 @@ export PATH
 # RJ's aliases
 alias vim="nvim"
 
-if [ ! `command -v exa >/dev/null` ]; then
+if [ `command -v exa` ]; then
     alias ls="exa"
 fi
 
-if [ ! `command -v bat >/dev/null` ]; then
+if [ `command -v bat` ]; then
     alias cat="bat"
 fi
 
-if [ ! `command -v rg >/dev/null` ]; then
+if [ `command -v rg` ]; then
     alias grep="rg"
 fi
 
 # Install Aliases
-if [ ! `command -v dnf >/dev/null` ]; then 
+if [ `command -v dnf` ]; then 
     alias dnfcu="dnf check-update"
     alias dnfu="sudo dnf upgrade"
     alias dnfs="dnf search"
@@ -39,7 +39,7 @@ if [ ! `command -v dnf >/dev/null` ]; then
 fi
 
 # Directory Colors
-eval $(dircolors $HOME/.config/dir_colors)
+# eval $(dircolors $HOME/.config/dir_colors)
 
 # PS1
 export PS1="[\[\e[34m\]\u\[\e[m\]@\[\e[35m\]\h\[\e[m\] \[\e[33m\]\W\[\e[m\]]\\$ "
