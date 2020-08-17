@@ -3,11 +3,16 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; C style
+(setq c-default-style "linux")
+
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Rolfe Power"
-      user-mail-address "rolfepower4@gmail.com")
+      user-mail-address "rolfepower4@gmail.com"
+      user-login-name "rpower"
+      user-real-login-name "rpower")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -20,46 +25,61 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-(setq doom-font "JetBrains Mono-10")
+(setq doom-font "CodeNewRoman Nerd Font-12")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-gruvbox)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files (directory-files-recursively "~/Dropbox/org" "\.org$"))
-(setq org-tag-alist '(("school" . ?s) ("research" . ?r) ("work" . ?w) ("personal" . ?p)))
+(setq org-agenda-files '("~/Dropbox/org/" "~/Dropbox/org/org-roam/"))
+
+;; Pomodoro
+(setq org-pomodoro-keep-killed-pomodoro-time 1)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Deft
+(setq deft-extensions '("org"))
+(setq deft-recursive t)
+(setq deft-default-extension "org")
+(setq deft-directory "~/Dropbox/org")
+
+;; Set the todo keywords with the corresponding "quick access keys"
 (after! org
     (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "PROG(p@/!)" "|" "DONE(d@/!)" "CANC(c@)"))))
-(after! hl-todo 
-        (setq hl-todo-keyword-faces
-              '(("TODO" warning bold)
-                ("NEXT" font-lock-constant-face bold)
-                ("PROG" font-lock-keyword-face bold)
-                ("DONE" success bold)
-                ("CANC" font-lock-doc-face bold))))
+        '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)"
+                    "|" 
+                    "DONE(d!)" "DEFERRED(f@)" "CANCELED(c@)")))
+    (setq org-todo-keyword-faces
+          '(("TODO" .     "#fb4933")
+            ("STARTED" .  "#fabd2f")
+            ("WAITING" .  "#fe8019")
+            ("DONE" .     "#b8bb26")
+            ("DEFERRED" . "#de869b")
+            ("CANCELED" . "#83a598"))
+ ))
 
-(after! org
-        (setq org-todo-keyword-faces
-              '(("TODO" warning bold)
-                ("NEXT" font-lock-constant-face bold)
-                ("PROG" font-lock-keyword-face bold)
-                ("DONE" success bold)
-                ("CANC" font-lock-doc-face bold))))
+;; Org roam
+(setq org-roam-directory "~/Dropbox/org/org-roam")
 
+;; Set the 
 (after! python
-  (setq python-shell-interpreter "python3"))
+  (setq python-shell-interpreter "ipython"))
 
 (after! latex (setq font-latex-fontify-script nil))
+
+;; Allow avy to search all windows
+(setq avy-all-windows t)
+
+;; Start Emacs Maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one

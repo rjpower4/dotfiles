@@ -1,5 +1,19 @@
 configuration {
+    show-icons: true;
+    theme: "gruvbox-dark";
+    font: "CodeNewRoman Nerd Font 12";
+    drun-display-format: "{icon} {name}";
+    display-run: " ";
+    display-drun: " ";
+    display-window: " ";
     modi: "window,run,drun";
-    theme: "sidetab";
-    font: "JetBrains Mono 12";
+}
+
+window {
+    width: 50%;
+    transparency: "real";
+}
+
+mainbox {
+    children: [inputbar, listview];
 }

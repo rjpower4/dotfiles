@@ -1,0 +1,14 @@
+[module/date]
+type = internal/date
+interval = 1
+
+time = " %Y-%b-%d %H:%M"
+time-alt = " %a, %b %d %H:%M"
+
+format-padding = 1
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.bright-blue}
+label = %{T2}%time%%{T-}
+label-foreground = ${colors.bright-blue}
+
+; vim:ft=dosini

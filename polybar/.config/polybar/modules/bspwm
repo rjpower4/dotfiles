@@ -1,0 +1,50 @@
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+format-padding = 1
+
+;format = <label-monitor>
+;label-monitor-foreground = ${colors.bright-blue}
+
+label-focused = %{T4}%icon%%{T-}
+label-focused-foreground = ${colors.yellow}
+label-focused-padding = 1
+
+label-occupied = %{T4}%icon%%{T-}
+label-occupied-foreground = ${colors.blue}
+label-occupied-padding = 1
+
+label-urgent = %{T4}%icon%%{T-}
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = %{T4}%icon%%{T-}
+label-empty-foreground = ${colors.magenta}
+label-empty-padding = 1
+
+label-monocle = %{T3}喝 %{T-}
+label-monocle-foreground = ${colors.bright-blue}
+label-fullscreen = %{T4} %{T-}
+label-fullscreen-foreground = ${colors.bright-blue}
+label-locked = %{T3} %{T-}
+label-locked-foreground = ${colors.yellow}
+label-sticky = %{T3}𢡊 %{T-}
+label-sticky-foreground = ${colors.yellow}
+label-private = %{T3}廬 %{T-}
+label-private-foreground = ${colors.red}
+label-marked = %{T3} %{T-}
+label-marked-foreground = ${colors.green}
+
+; vim:ft=dosini

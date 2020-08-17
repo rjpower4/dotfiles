@@ -9,9 +9,12 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
 
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
 
 augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
@@ -85,7 +88,7 @@ set t_vb=
 syntax enable
 
 " Visual crap
-" colorscheme desert
+" colorscheme base16-tomorrow-night
 " set background=dark
 
 " No one uses tabs, replaces with spaces 

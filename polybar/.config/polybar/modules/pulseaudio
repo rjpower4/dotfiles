@@ -1,0 +1,36 @@
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+
+;format-volume = <ramp-volume> <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+label-volume = %percentage%%
+label-volume-foreground = ${colors.yellow}
+label-volume-padding = 1
+
+format-muted-padding = 1
+label-muted = %{T3}ﱝ%{T-}
+label-muted-foreground = ${colors.red}
+
+bar-volume-empty = 
+bar-volume-fill = 
+bar-volume-indicator = 
+bar-volume-width = 10
+bar-volume-empty-foreground = ${colors.bright-black}
+bar-volume-indicator-foreground = ${colors.white}
+bar-volume-foreground-0 = ${colors.blue}
+bar-volume-foreground-1 = ${colors.bright-blue}
+bar-volume-foreground-2 = ${colors.bright-blue}
+bar-volume-foreground-3 = ${colors.yellow}
+
+ramp-volume-0 = %{T3}奄%{T-}
+ramp-volume-1 = %{T3}奔%{T-}
+ramp-volume-2 = %{T3}%{T-}
+ramp-volume-0-foreground = ${colors.blue}
+ramp-volume-1-foreground = ${colors.bright-blue}
+ramp-volume-2-foreground = ${colors.yellow}
+
+click-right = pavucontrol&
+
+; vim:ft=dosini
