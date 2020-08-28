@@ -70,7 +70,7 @@
 
 ;; Set the 
 (after! python
-  (setq python-shell-interpreter "ipython"))
+  (setq python-shell-interpreter "python3"))
 
 (after! latex (setq font-latex-fontify-script nil))
 
