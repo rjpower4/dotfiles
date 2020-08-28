@@ -2,8 +2,7 @@
 
 eval $(dbus-launch --sh-syntax)
 sxhkd &
-picom --config $HOME/.config/picom.confg -b &
-feh --randomize --recursive  --no-fehbg --bg-scale ~/Dropbox/Media/Pictures/wallpapers/* &
+feh --recursive  --no-fehbg --bg-scale ~/Dropbox/Media/Pictures/wallpapers/hedi-alija-V21dkuL8dnM-unsplash.jpg &
 emacs --daemon &
 mpd
 wmname LG3D
@@ -28,4 +27,5 @@ bspc rule -a Zathura state=tiled
 bspc rule -a matplotlib state=floating
 
 bspc monitor -d I II III IV V VI VII VIII IX X
+picom --config $HOME/.config/picom/picom.conf -b &
 $HOME/.config/polybar/launch.sh
