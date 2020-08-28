@@ -9,12 +9,9 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
-let g:deoplete#enable_at_startup = 1
 
 augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
