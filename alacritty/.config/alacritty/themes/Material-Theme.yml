@@ -1,17 +1,4 @@
-window:
-    decorations: full
-    padding: 
-        x: 6
-        y: 6
-
-shell:
-    program: /usr/bin/zsh
-
-font:
-    size: 10
-    normal:
-        family: Source Code Pro
-
+# Colors (Material Theme)
 colors:
   # Default colors
   primary:
@@ -39,4 +26,3 @@ colors:
     magenta: '#f07178'  # Pink of the original material theme
     cyan:    '#89ddff'
     white:   '#ffffff'  # Arbitrary
-background_opacity: 1.0
