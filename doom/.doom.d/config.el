@@ -25,17 +25,23 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-(setq doom-font "CodeNewRoman Nerd Font-12")
+(setq doom-font "Source Code Pro-10")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-material)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files '("~/Dropbox/org/" "~/Dropbox/org/org-roam/"))
+(setq org-agenda-files '("~/Dropbox/org/"))
+
+;; Org Journal
+(setq org-journal-dir "~/Dropbox/org/")
+(setq org-journal-file-format "%Y-%m-%d.org")
+(setq org-journal-date-format "%e %b %Y (%A)")
+(setq org-journal-time-format " ")
 
 ;; Pomodoro
 (setq org-pomodoro-keep-killed-pomodoro-time 1)
@@ -65,10 +71,7 @@
             ("CANCELED" . "#83a598"))
  ))
 
-;; Org roam
-(setq org-roam-directory "~/Dropbox/org/org-roam")
-
-;; Set the 
+;; Set the
 (after! python
   (setq python-shell-interpreter "python3"))
 
@@ -78,7 +81,7 @@
 (setq avy-all-windows t)
 
 ;; Start Emacs Maximized
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
