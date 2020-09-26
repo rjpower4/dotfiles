@@ -22,8 +22,9 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        (ivy                ; a search engine for love and life
-            +fuzzy
-            +icons)
+	    +prescient
+        +fuzzy
+        +icons)
 
        :ui
        deft                ; notational velocity for Emacs
@@ -32,7 +33,7 @@
        doom-quit           ; DOOM quit-message prompts when you quit Emacs
        ;;fill-column       ; a `fill-column' indicator
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;;hydra
+       hydra
        indent-guides       ; highlighted indent columns
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
@@ -92,7 +93,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       lsp
+       (lsp +peek)
        ;;macos             ; MacOS-specific commands
        magit               ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
@@ -127,10 +128,10 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
-       ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java +meghanada) ; the poster child for carpal tunnel syndrome
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        julia               ; a better, faster MATLAB
-       ;;kotlin            ; a better, slicker Java(Script)
+       (kotlin +lsp)       ; a better, slicker Java(Script)
        (latex +lsp)        ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
