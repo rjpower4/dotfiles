@@ -1,5 +1,6 @@
 ﻿---
 AlwaysBreakAfterReturnType: None
+AllowShortFunctionsOnASingleLine: None
 BasedOnStyle: LLVM
 BraceWrapping:
     AfterEnum: true
@@ -10,6 +11,6 @@ BraceWrapping:
     AfterNamespace: true
     AfterUnion: true
 BreakBeforeBraces: Custom
-TabWidth: '2'
-UseTab: Always
+IndentWidth: 4
+UseTab: Never 
 ...
