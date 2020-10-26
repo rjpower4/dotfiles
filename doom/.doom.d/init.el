@@ -31,6 +31,7 @@
        doom                ; what makes DOOM look the way it does
        doom-dashboard      ; a nifty splash screen for Emacs
        doom-quit           ; DOOM quit-message prompts when you quit Emacs
+       (emoji +unicode)    ; Displays and inserts emojis
        ;;fill-column       ; a `fill-column' indicator
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
@@ -75,8 +76,8 @@
        :term
        eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
-       ;;term                ; basic terminal emulator for Emacs
-       vterm             ; the best terminal emulation in Emacs
+       term                ; basic terminal emulator for Emacs
+       ;;vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -107,7 +108,7 @@
 
        :lang
        ;;agda              ; types of types of types of types...
-       (cc +lsp)           ; C/C++/Obj-C madness
+       (cc +lsp)                ; C/C++/Obj-C madness
        clojure             ; java with a lisp
        common-lisp         ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -121,17 +122,19 @@
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
        ;;faust             ; dsp, but you get to keep your soul
-       fsharp              ; ML stands for Microsoft's Language
+       ;;fsharp              ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
-       (go +lsp)           ; the hipster dialect
+       ;;(go +lsp)           ; the hipster dialect
        (haskell +lsp)      ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
-       (java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java 
+         +meghanada
+         +lsp) ; the poster child for carpal tunnel syndrome
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        julia               ; a better, faster MATLAB
-       (kotlin +lsp)       ; a better, slicker Java(Script)
+       ;;(kotlin +lsp)       ; a better, slicker Java(Script)
        (latex +lsp)        ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
@@ -168,7 +171,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       (web +lsp)          ; the tubes
+       ;;(web +lsp)          ; the tubes
        (yaml +lsp)         ; JSON, but readable
 
        :email
