@@ -9,7 +9,6 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
