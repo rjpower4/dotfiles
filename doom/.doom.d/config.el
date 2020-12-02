@@ -14,6 +14,9 @@
       user-login-name "rpower"
       user-real-login-name "rpower")
 
+;; Show timme in mode line
+(display-time-mode 1)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -25,12 +28,12 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-(setq doom-font "Hack-10")
+(setq doom-font "Source Code Pro-10")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-monokai-pro)
+(setq doom-theme 'doom-dracula)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -38,10 +41,11 @@
 (setq org-agenda-files '("~/Dropbox/org/"))
 
 ;; Org Journal
-(setq org-journal-dir "~/Dropbox/org/")
+(setq org-journal-dir "~/Dropbox/org/journal")
 (setq org-journal-file-format "%Y-%m-%d.org")
 (setq org-journal-date-format "%e %b %Y (%A)")
 (setq org-journal-time-format " ")
+(setq org-journal-enable-agenda-integration t)
 
 ;; Pomodoro
 (setq org-pomodoro-keep-killed-pomodoro-time 1)

@@ -76,8 +76,8 @@
        :term
        eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
-       term                ; basic terminal emulator for Emacs
-       ;;vterm             ; the best terminal emulation in Emacs
+       ;;term                ; basic terminal emulator for Emacs
+       vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
@@ -109,8 +109,8 @@
        :lang
        ;;agda              ; types of types of types of types...
        (cc +lsp)                ; C/C++/Obj-C madness
-       clojure             ; java with a lisp
-       common-lisp         ; if you've seen one lisp, you've seen them all
+       ;;clojure             ; java with a lisp
+       ;;common-lisp         ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
@@ -125,15 +125,13 @@
        ;;fsharp              ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;(go +lsp)           ; the hipster dialect
-       (haskell +lsp)      ; a language that's lazier than I am
+       ;;(haskell +lsp)      ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
-       (java 
-         +meghanada
-         +lsp) ; the poster child for carpal tunnel syndrome
+       ;;(java             ; the poster child for carpal tunnel syndrome
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
-       julia               ; a better, faster MATLAB
+       (julia)             ; a better, faster MATLAB
        ;;(kotlin +lsp)       ; a better, slicker Java(Script)
        (latex +lsp)        ; writing papers in Emacs has never been so fun
        ;;lean
@@ -145,10 +143,9 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
+        +hugo
         +pomodoro
-        +jupyter
         +journal
-        +gnuplot
         +pandoc
         +present
         +pretty)
@@ -159,13 +156,13 @@
        (python +lsp        ; beautiful is better than ugly
                +poetry)
        ;;qt                ; the 'cutest' gui framework ever
-       racket              ; a DSL for DSLs
+       ;;racket              ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp)         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       scheme              ; a fully conniving family of lisps
+       ;;scheme              ; a fully conniving family of lisps
        (sh +lsp)           ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
