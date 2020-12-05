@@ -28,24 +28,24 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-(setq doom-font "Source Code Pro-10")
+;;(setq doom-font "Hack-10")
+(setq doom-font "Anonymous Pro-11")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-gruvbox)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Dropbox/org/")
-(setq org-agenda-files '("~/Dropbox/org/"))
+(after! org (setq org-agenda-files '("~/Dropbox/org/" "~/Dropbox/org/journal/")))
 
 ;; Org Journal
 (setq org-journal-dir "~/Dropbox/org/journal")
 (setq org-journal-file-format "%Y-%m-%d.org")
 (setq org-journal-date-format "%e %b %Y (%A)")
 (setq org-journal-time-format " ")
-(setq org-journal-enable-agenda-integration t)
 
 ;; Pomodoro
 (setq org-pomodoro-keep-killed-pomodoro-time 1)
@@ -63,11 +63,12 @@
 ;; Set the todo keywords with the corresponding "quick access keys"
 (after! org
     (setq org-todo-keywords
-        '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)"
+        '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "ATTEND(a)"
                     "|" 
                     "DONE(d!)" "DEFERRED(f@)" "CANCELED(c@)")))
     (setq org-todo-keyword-faces
           '(("TODO" .     "#fb4933")
+            ("ATTEND" .   "#d872cb")
             ("STARTED" .  "#fabd2f")
             ("WAITING" .  "#fe8019")
             ("DONE" .     "#b8bb26")
