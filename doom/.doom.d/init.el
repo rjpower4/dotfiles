@@ -1,4 +1,4 @@
-;;; init.el -*- lexical-binding: t; -*-
+;; init.el -*- lexical-binding: t; -*-
 
 ;; This file controls what Doom modules are enabled and what order they load
 ;; in. Remember to run 'doom sync' after modifying it!
@@ -74,14 +74,14 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell            ; the elisp shell that works everywhere
+       eshell              ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
-       ;;term                ; basic terminal emulator for Emacs
-       vterm             ; the best terminal emulation in Emacs
+       term                ; basic terminal emulator for Emacs
+       ;;vterm             ; the best terminal emulation in Emacs
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       spell               ; tasing you for misspelling mispelling
+       (spell +aspell)     ; tasing you for misspelling mispelling
        ;;grammar           ; tasing grammar mistake every you make
 
        :tools
@@ -93,7 +93,8 @@
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
-       lookup              ; navigate your code and its documentation
+       (lookup             ; navigate your code and its documentation
+        +dictionary)
        (lsp +peek)
        ;;macos             ; MacOS-specific commands
        magit               ; a git porcelain for Emacs
@@ -122,10 +123,10 @@
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
        ;;faust             ; dsp, but you get to keep your soul
-       ;;fsharp              ; ML stands for Microsoft's Language
+       ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
-       ;;(go +lsp)           ; the hipster dialect
-       ;;(haskell +lsp)      ; a language that's lazier than I am
+       ;;(go +lsp)         ; the hipster dialect
+       (haskell +lsp)      ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
@@ -138,7 +139,9 @@
        ;;factor
        ;;ledger            ; an accounting system in Emacs
        ;;lua               ; one-based indices? one-based indices
-       (markdown +pandoc)  ; writing docs for people to ignore
+       (markdown           ; writing docs for people to ignore
+        +grip
+        +pandoc)
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
@@ -156,7 +159,7 @@
        (python +lsp        ; beautiful is better than ugly
                +poetry)
        ;;qt                ; the 'cutest' gui framework ever
-       ;;racket              ; a DSL for DSLs
+       racket              ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
@@ -178,8 +181,8 @@
 
        :app
        ;;calendar
-       ;;irc               ; how neckbeards socialize
-       ;;(rss +org)        ; emacs as an RSS reader
+       irc                 ; how neckbeards socialize
+       (rss +org)          ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config

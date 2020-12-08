@@ -9,9 +9,9 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Rolfe Power"
-      user-mail-address "rolfepower4@gmail.com"
-      user-login-name "rpower"
+(setq user-full-name       "Rolfe Power"
+      user-mail-address    "rolfepower4@gmail.com"
+      user-login-name      "rpower"
       user-real-login-name "rpower")
 
 ;; Show timme in mode line
@@ -28,8 +28,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-;;(setq doom-font "Hack-10")
-(setq doom-font "Anonymous Pro-11")
+(setq doom-font "Hack-10")
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -78,12 +77,21 @@
 
 ;; Set the
 (after! python
-  (setq python-shell-interpreter "python3"))
+        (setq python-shell-interpreter "python3"))
 
 (after! latex (setq font-latex-fontify-script nil))
 
 ;; Allow avy to search all windows
 (setq avy-all-windows t)
+
+
+;; Custom Bindings for jumping
+(map! :leader
+      (:prefix-map ("j" . "jump")
+       :desc "Char 2" "c" #'avy-goto-char-2
+       :desc "Word"   "w" #'avy-goto-word-or-subword-1
+       :desc "Window" "W" #'ace-window
+       :desc "Line"   "l" #'avy-goto-line))
 
 ;; Start Emacs Maximized
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
