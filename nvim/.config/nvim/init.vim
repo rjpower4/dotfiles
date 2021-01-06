@@ -5,7 +5,7 @@ set nocompatible
 filetype off
 
 call plug#begin()
-     Plug 'itchyny/lightline.vim'
+     "Plug 'itchyny/lightline.vim'
      Plug 'frazrepo/vim-rainbow'
      Plug 'scrooloose/nerdtree'
      Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -16,8 +16,9 @@ call plug#begin()
      Plug 'junegunn/goyo.vim'
      Plug 'junegunn/limelight.vim'
      Plug 'junegunn/vim-emoji'
-     Plug 'shinchu/lightline-gruvbox.vim'
-     Plug 'morhetz/gruvbox'
+     "Plug 'crusoexia/vim-monokai'
+     "Plug 'shinchu/lightline-gruvbox.vim'
+     "Plug 'morhetz/gruvbox'
      Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
@@ -37,11 +38,13 @@ syntax enable
 let g:rehash256 = 1
 
 " Theme
-autocmd vimenter * ++nested colorscheme gruvbox
+" let base16colorspace=256 
+set termguicolors
+colors zenburn
 
 " Status Line
 let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+" let g:lightline.colorscheme = 'gruvbox'
 set laststatus=2
 set noshowmode
 
