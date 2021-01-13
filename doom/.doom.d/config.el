@@ -28,12 +28,13 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;;(setq doom-font (font-spec :family "Inconsolata Regular" :size 14))
-(setq doom-font "Hack-10")
+;;(setq doom-font (font-spec :family "iosevka term ss05" :size 14))
+(setq doom-font (font-spec :family "Hack" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-zenburn)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -87,11 +88,18 @@
 
 ;; Custom Bindings for jumping
 (map! :leader
-      (:prefix-map ("j" . "jump")
-       :desc "Char 2" "c" #'avy-goto-char-2
-       :desc "Word"   "w" #'avy-goto-word-or-subword-1
+       :desc "Word"   "j" #'avy-goto-word-or-subword-1
        :desc "Window" "W" #'ace-window
-       :desc "Line"   "l" #'avy-goto-line))
+       :desc "Line"   "J" #'avy-goto-line)
+
+
+;; Use clangd
+(setq lsp-clients-clangd-args '("-j=3"
+                                "--background-index"
+                                "--clang-tidy"
+                                "--completion-style=detailed"
+                                "--header-insertion=never"))
+(after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;; Start Emacs Maximized
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
