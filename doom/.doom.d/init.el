@@ -22,7 +22,7 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        (ivy                ; a search engine for love and life
-	    +prescient
+	+prescient
         +fuzzy
         +icons)
 
@@ -34,8 +34,8 @@
        (emoji +unicode)    ; Displays and inserts emojis
        ;;fill-column       ; a `fill-column' indicator
        hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       hydra
-       indent-guides       ; highlighted indent columns
+       ;;hydra
+       ;;indent-guides       ; highlighted indent columns
        modeline            ; snazzy, Atom-inspired modeline, plus API
        nav-flash           ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -55,7 +55,7 @@
        :editor
        (evil +everywhere)  ; come to the dark side, we have cookies
        file-templates      ; auto-snippets for empty files
-       fold                ; (nigh) universal code folding
+       ;;fold                ; (nigh) universal code folding
        (format +onsave)    ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
@@ -74,7 +74,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell              ; the elisp shell that works everywhere
+       ;;eshell              ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term                ; basic terminal emulator for Emacs
        vterm             ; the best terminal emulation in Emacs
@@ -95,14 +95,14 @@
        ;;gist              ; interacting with github gists
        (lookup             ; navigate your code and its documentation
         +dictionary)
-       (lsp +peek)
+       lsp
        ;;macos             ; MacOS-specific commands
        magit               ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        pdf                 ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       rgb                 ; creating color strings
+       ;;rgb                 ; creating color strings
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
@@ -110,8 +110,8 @@
        :lang
        ;;agda              ; types of types of types of types...
        (cc +lsp)           ; C/C++/Obj-C madness
-       clojure             ; java with a lisp
-       common-lisp         ; if you've seen one lisp, you've seen them all
+       ;;clojure             ; java with a lisp
+       ;;common-lisp         ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
@@ -126,7 +126,7 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        (go +lsp)           ; the hipster dialect
-       (haskell +lsp)      ; a language that's lazier than I am
+       ;;(haskell +lsp)      ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
@@ -146,7 +146,6 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
-        +hugo
         +pomodoro
         +journal
         +pandoc
@@ -156,16 +155,16 @@
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       (python +lsp        ; beautiful is better than ugly
-               +poetry)
+       (python +lsp
+	       +pyright)       ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
-       racket              ; a DSL for DSLs
+       ;;racket              ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        rust                ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       scheme              ; a fully conniving family of lisps
+       ;;scheme              ; a fully conniving family of lisps
        (sh +lsp)           ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
