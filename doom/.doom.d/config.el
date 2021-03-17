@@ -8,12 +8,63 @@
 (setq user-full-name       "Rolfe Power"
       user-mail-address    (rot13 "ebysrcbjre4@tznvy.pbz"))
 
+;; --- Check system type
+(defconst *sys/linux*
+  (eq system-type 'gnu/linux))
+
+(defconst *sys/win32*
+  (eq system-type 'windows-nt))
+
+(defconst *sys/win32*
+  (eq system-type 'darwin))
+
+;; --- Are we root?
+(defconst *sys/root*
+  (string-equal "root" (getenv "USER")))
+
+;;; --- We on a GUI
+(defconst *sys/gui*
+  (display-graphic-p))
+
+;; --- Finding Executables
+(defconst *clangd*
+  (or (executable-find "clangd")
+      (executable-find "/usr/local/opt/llvm/bin/clangd")))
+
+(defconst *gcc*
+  (executable-find "gcc"))
+
+(defconst *git*
+  (executable-find "git"))
+
+(defconst *pdflatex*
+  (executable-find "pdflatex"))
+
+(defconst *python3*
+  (executable-find "python3"))
+
+(defconst *python*
+  (executable-find "python"))
+
+(defconst *rg*
+  (executable-find "rg"))
+
+(defconst *tr*
+  (executable-find "tr"))
+
+;; Basic Settings
+(setq-default delete-by-moving-to-trash t
+              tab-width 4
+              uniquify-buffer-name-style 'forward)
+(setq inhibit-compacting-font-caches t)
+(global-subword-mode 1) ;; Iterate through CamelCaseWords
+
 ;; --- Directories
 (setq power/home-directory "/home/rpower/")
 (setq power/org-directory (concat power/home-directory "Dropbox/org/"))
 
 ;; --- Visual Settings
-(setq doom-font (font-spec :family "Hack" :size 15)
+(setq doom-font (font-spec :family "Hack" :size 34)
       doom-variable-pitch-font (font-spec :family "Roboto")
       doom-serif-font (font-spec :family "Roboto"))
 
@@ -26,20 +77,23 @@
 
 
 ;; --- Themes
-(use-package! doom-themes
-  :config
-  (load-theme 'doom-homage-black t)
-  (doom-themes-org-config))
+(use-package! modus-themes)
+(setq power/light-theme   'modus-operandi)
+(setq power/dark-theme    'modus-vivendi)
+(setq power/default-theme 'power/dark-theme)
 
 (defun power/night-mode ()
   (interactive)
-  (load-theme 'doom-homage-black t)
+  (load-theme power/dark-theme t)
   (doom/reload-theme))
 
 (defun power/day-mode ()
   (interactive)
-  (load-theme 'doom-homage-white t)
+  (load-theme power/light-theme t)
   (doom/reload-theme))
+
+(after! modus-themes
+  (power/night-mode))
 
 ;; --- Misc
 ;; Show time in mode line
