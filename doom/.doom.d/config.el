@@ -64,7 +64,7 @@
 (setq power/org-directory (concat power/home-directory "Dropbox/org/"))
 
 ;; --- Visual Settings
-(setq doom-font (font-spec :family "Hack" :size 34)
+(setq doom-font (font-spec :family "Roboto Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Roboto")
       doom-serif-font (font-spec :family "Roboto"))
 
