@@ -110,7 +110,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        (cc +lsp)           ; C/C++/Obj-C madness
-       ;;clojure             ; java with a lisp
+       clojure             ; java with a lisp
        ;;common-lisp         ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
@@ -158,7 +158,7 @@
        (python +lsp
 	       +pyright)       ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
-       ;;racket              ; a DSL for DSLs
+       racket              ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
