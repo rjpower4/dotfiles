@@ -1,9 +1,0 @@
-[module/session]
-type = custom/script
-
-click-left = "kill -9 -1"
-exec = echo %{T3} 襤 %{T-}
-format-background = ${colors.red}
-format-foreground = ${colors.white}
-
-; vim:ft=dosini
