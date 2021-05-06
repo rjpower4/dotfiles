@@ -1,0 +1,16 @@
+# Octave History
+export OCTAVE_HISTFILE="$HOME/.cache/octave-history"
+
+# Less history
+export LESSHISTFILE="$HOME/.cache/less-history"
+export LESSHISTSIZE=10000
+
+# Rust
+export CARGO_HOME="$HOME/.local/opt/rust/cargo"
+export RUSTUP_HOME="$HOME/.local/opt/rust/rustup"
+
+# Julia
+export JULIA_DEPOT_PATH="$HOME/.local/opt/julia/depot"
+
+# Go
+export GOPATH="$HOME/.local/opt/go"

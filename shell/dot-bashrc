@@ -1,0 +1,39 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Prompt
+PS1='[\u@\h \W]\$ '
+
+# Bash history files
+HISTFILE="$HOME/.cache/bash-history"
+HISTFILESIZE=10000
+HISTSIZE=10000
+
+# Add local bin to path if extant
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+# Emacs
+if [ -d "$HOME/.config/emacs/bin" ]; then
+    export PATH="$PATH:$HOME/.config/emacs/bin"
+fi
+
+# Rust
+if [ -d "$CARGO_HOME/bin" ]; then
+    export PATH="$PATH:$CARGO_HOME/bin"
+fi
+
+# Go
+if [ -d "$GOPATH/bin" ]; then
+    export PATH="$PATH:$GOPATH/bin"
+fi
+
+# Aliases
+alias ls='ls --color=auto'
+alias la='ls -Alh --color=auto'
+alias ll='ls -lh --color=auto'
