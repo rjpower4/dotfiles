@@ -1,0 +1,165 @@
+#!/usr/bin/env python
+# -*- mode: python -*-
+
+import toml
+from pathlib import Path
+from dataclasses import dataclass
+from tabulate import tabulate
+from tqdm import tqdm
+import requests
+import click
+
+# Name of file
+DATASET_FILENAME = "datasets.toml"
+
+# Global Dataset Source
+DATASET_SOURCE = None
+
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+#                               DATASET MANAGEMENT STUFF                                  #
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+@dataclass
+class Dataset:
+    name: str
+    description: str
+    filename: str
+    url: str
+
+    @classmethod
+    def fromdict(cls, name, d):
+        return cls(name, d["description"], d["filename"], d["url"])
+
+
+class DatasetGroup:
+    def __init__(self, filepath):
+        self.path = Path(filepath)
+
+        # Ensure that the dataset source was found and is a file
+        # NOTE: Can remove this later if we want to be able to write
+        #       dataset sources with this class...
+        if not self.path.exists():
+            raise FileExistsError(f"Cannot find file `{self.path}`")
+        elif self.path.is_dir():
+            raise IsADirectoryError(
+                f"Dataset filepath must be a file, found dir `{self.path}`"
+            )
+
+        # Read in the data
+        with open(self.path, "r") as f:
+            self.raw_data = toml.load(f)
+
+        # Initialize the `_data` member for lazy loading
+        self.datasets = {}
+        for (name, info) in self.raw_data["datasets"].items():
+            self.datasets[name] = Dataset.fromdict(name, info)
+        self.author = self.raw_data["author"]
+
+    def __contains__(self, name):
+        """Check whether the dataset named `name` is in the source."""
+        return name in self.datasets
+
+    def names(self):
+        """Return a list of the names of the datasets found."""
+        return [k for k in self.datasets.keys()]
+
+
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+#                                 DOWNLOADING UTILITIES                                   #
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+
+
+class Downloader:
+    def __init__(self, progress_bar=True):
+        self.pbar = progress_bar
+
+    def build_pbar(self, tsize, name):
+        progress_bar = tqdm(
+            total=tsize,
+            unit="iB",
+            unit_scale=True,
+            desc=name,
+        )
+        return progress_bar
+
+    def download(self, filename, url, name=None):
+        """Download the file at the specified url and save to corresponding filename."""
+        r = requests.get(url, stream=True)
+        total_size_in_bytes = int(r.headers.get("content-length", 0))
+        block_size = 1024
+        if name == None:
+            name = filename
+
+        if self.pbar:
+            progress_bar = self.build_pbar(total_size_in_bytes, name)
+            update = lambda k: progress_bar.update(k)
+            close = lambda: progress_bar.close()
+        else:
+            update = lambda k: ()
+            close = lambda: ()
+
+        with open(filename, "wb") as f:
+            for chunk in r.iter_content(chunk_size=1024):
+                if self.pbar:
+                    update(len(chunk))
+                if chunk:
+                    f.write(chunk)
+        close()
+
+
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+#                                 COMMAND LINE INTERFACE                                  #
+# --------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+@click.group()
+def rover():
+    pass
+
+
+@rover.command()
+def speak():
+    """List the available datasets."""
+    names = []
+    filenames = []
+    descriptions = []
+    for _, ds in DATASET_SOURCE.datasets.items():
+        names.append(ds.name)
+        filenames.append(ds.filename)
+        descriptions.append(ds.description)
+    print(
+        tabulate(
+            {"Name": names, "Filename": filenames, "Description": descriptions},
+        )
+    )
+
+
+@rover.command()
+@click.argument("names", nargs=-1)
+@click.option(
+    "-q", "--quiet", is_flag=True, default=False, help="Do not show output to console"
+)
+def fetch(names, quiet):
+    """Fetch datasets with names in NAMES and save to current directory."""
+    if quiet:
+        dloader = Downloader(False)
+    else:
+        dloader = Downloader()
+
+    # Make sure that all names are valid
+    for n in names:
+        if not (n in DATASET_SOURCE):
+            raise RuntimeError(f'Dataset "{n}" not found. No downloads performed')
+    # Start Download
+    for n in names:
+        ds = DATASET_SOURCE.datasets[n]
+        dloader.download(ds.filename, ds.url, ds.name)
+
+
+if __name__ == "__main__":
+    current_dir = Path(__file__).parent.absolute()
+    DATASET_SOURCE = DatasetGroup(current_dir.joinpath(DATASET_FILENAME))
+    rover()
