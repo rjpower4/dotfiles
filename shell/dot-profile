@@ -5,6 +5,9 @@ export OCTAVE_HISTFILE="$HOME/.cache/octave-history"
 export LESSHISTFILE="$HOME/.cache/less-history"
 export LESSHISTSIZE=10000
 
+# Wget
+export WGETRC=$HOME/.config/wget/wgetrc
+
 # Rust
 export CARGO_HOME="$HOME/.local/opt/rust/cargo"
 export RUSTUP_HOME="$HOME/.local/opt/rust/rustup"
