@@ -20,8 +20,15 @@ HISTSIZE=10000
 
 # Add local bin to path if extant
 if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$PATH:$HOME/.local/bin"
+    PATH="$HOME/.local/bin:$PATH"
 fi
+export PATH
+
+# Add scripts directory to path if extant
+if [ -d "$HOME/.local/scripts" ]; then 
+    PATH="$HOME/.local/scripts:$PATH"
+fi
+export PATH
 
 # Emacs
 if [ -d "$HOME/.config/emacs/bin" ]; then
