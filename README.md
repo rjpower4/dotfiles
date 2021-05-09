@@ -7,6 +7,7 @@ The following programs (listed alphabetically) have configurations in this repos
 - Alacritty
 - Bash
 - Doom Emacs
+- Git
 - Matplotlib
 - Neovim
 - Tmux
