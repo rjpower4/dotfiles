@@ -25,6 +25,9 @@ call plug#begin(stdpath('data') . '/plugged')
     " Slime
     Plug 'jpalardy/vim-slime'
 
+    " All Languages
+    Plug 'sheerun/vim-polyglot'
+
     " Julia
     Plug 'JuliaEditorSupport/julia-vim'
 
