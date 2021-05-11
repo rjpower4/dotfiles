@@ -35,6 +35,9 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
 
+    " LaTeX
+    Plug 'lervag/vimtex'
+
     " Colorschemes
     Plug 'sainnhe/everforest'
     Plug 'joshdick/onedark.vim'
@@ -48,3 +51,8 @@ call plug#end()
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+
+" LaTeX
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
