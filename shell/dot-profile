@@ -17,3 +17,9 @@ export JULIA_DEPOT_PATH="$HOME/.local/opt/julia/depot"
 
 # Go
 export GOPATH="$HOME/.local/opt/go"
+
+# Clojure
+export CLJ_CONFIG="$HOME/.config/clojure"
+
+# QT
+export QT_QPA_PLATFORMTHEME="qt5ct"
