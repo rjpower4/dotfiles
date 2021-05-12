@@ -45,7 +45,14 @@ if [ -d "$GOPATH/bin" ]; then
     export PATH="$PATH:$GOPATH/bin"
 fi
 
-# Aliases
+# File Listing Aliases
 alias ls='ls --color=auto'
-alias la='ls -Alh --color=auto'
-alias ll='ls -lh --color=auto'
+alias la='ls -AlhF --color=auto'
+alias ll='ls -lhF --color=auto'
+
+# Git aliases
+alias gs='git status' # Assumes you don't need ghostscript (gs)
+alias ga='git add'
+alias gd='git diff'
+alias gl='git log'
+alias glol='git log --graph --oneline'
