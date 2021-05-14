@@ -153,10 +153,10 @@
 (use-package! org-journal
   :after org
   :config
-  (customize-set-variable 'org-journal-dir
-                          (expand-file-name "journal/" org-directory))
+  (customize-set-variable 'org-journal-dir (expand-file-name "journal/" org-directory))
   (customize-set-variable 'org-journal-file-format "%Y-%m-%d.org")
-  (customize-set-variable 'org-journal-date-format "%Y-%m-%d")
+  (customize-set-variable 'org-journal-date-format "%e %b %Y (%A)")
+  (customize-set-variable 'org-journal-date-prefix "#+TITLE: ")
   (customize-set-variable 'org-journal-time-prefix "* ")
   (customize-set-variable 'org-journal-time-format ""))
 
