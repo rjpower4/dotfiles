@@ -1,2 +1,5 @@
 [init]
 	defaultBranch = master
+[user]
+	email = rolfepower4@gmail.com
+	name = Rolfe Power
