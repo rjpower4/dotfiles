@@ -48,6 +48,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'lifepillar/vim-gruvbox8'
     Plug 'ayu-theme/ayu-vim'
     Plug 'haishanh/night-owl.vim'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'jnurmine/Zenburn'
 call plug#end()
 
 " Slime

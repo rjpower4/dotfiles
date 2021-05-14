@@ -3,4 +3,5 @@
 runtime! core/plugins.vim
 runtime! core/settings.vim
 runtime! core/mappings.vim
+runtime! core/color.vim
 
