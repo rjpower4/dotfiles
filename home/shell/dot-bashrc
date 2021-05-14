@@ -52,6 +52,7 @@ alias ll='ls -lhF --color=auto'
 
 # Git aliases
 alias gs='git status' # Assumes you don't need ghostscript (gs)
+alias gp='git push'
 alias ga='git add'
 alias gd='git diff'
 alias gl='git log'
