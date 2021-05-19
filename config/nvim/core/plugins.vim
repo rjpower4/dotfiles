@@ -40,16 +40,6 @@ call plug#begin(stdpath('data') . '/plugged')
 
     " LaTeX
     Plug 'lervag/vimtex'
-
-    " Colorschemes
-    Plug 'sainnhe/everforest'
-    Plug 'joshdick/onedark.vim'
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'lifepillar/vim-gruvbox8'
-    Plug 'ayu-theme/ayu-vim'
-    Plug 'haishanh/night-owl.vim'
-    Plug 'sainnhe/gruvbox-material'
-    Plug 'jnurmine/Zenburn'
 call plug#end()
 
 " Slime
