@@ -32,17 +32,17 @@ export PATH
 
 # Emacs
 if [ -d "$HOME/.config/emacs/bin" ]; then
-    export PATH="$PATH:$HOME/.config/emacs/bin"
+    export PATH="$HOME/.config/emacs/bin:$PATH"
 fi
 
 # Rust
 if [ -d "$CARGO_HOME/bin" ]; then
-    export PATH="$PATH:$CARGO_HOME/bin"
+    export PATH="$CARGO_HOME/bin:$PATH"
 fi
 
 # Go
 if [ -d "$GOPATH/bin" ]; then
-    export PATH="$PATH:$GOPATH/bin"
+    export PATH="$GOPATH/bin:$PATH"
 fi
 
 # File Listing Aliases
