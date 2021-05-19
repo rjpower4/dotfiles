@@ -20,6 +20,7 @@ export GOPATH="$HOME/.local/opt/go"
 
 # Clojure
 export CLJ_CONFIG="$HOME/.config/clojure"
+export LEIN_HOME="$HOME/.local/opt/lein"
 
 # QT
 export QT_QPA_PLATFORMTHEME="qt5ct"
