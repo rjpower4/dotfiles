@@ -24,3 +24,6 @@ export LEIN_HOME="$HOME/.local/opt/lein"
 
 # QT
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# CCACHE
+export CCACHE_CONFIGPATH="$HOME/.config/ccache/ccache.conf"
