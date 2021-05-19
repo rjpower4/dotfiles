@@ -1,5 +1,15 @@
 #!/bin/bash
 
+uspec="$HOME/.npmrc"
+defuser="rjpower"
+
+if [[ ! "$USER" = "$defuser" ]]; then 
+    echo "WARNING: You're not $defuser... The following are username specific and will need to be updated:"
+    for f in $uspec; do
+        echo "    - $f"
+    done
+fi
+
 function stowHome {
     local hpath="./home"
     for config_group in "$hpath"/*; do
