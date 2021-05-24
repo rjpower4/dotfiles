@@ -27,3 +27,9 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # CCACHE
 export CCACHE_CONFIGPATH="$HOME/.config/ccache/ccache.conf"
+
+# Chicken
+export CHICKEN_INCLUDE_PATH="$HOME/.cache/chicken/install/;$HOME/.cache/chicken/eggs/"
+export CHICKEN_EGG_CACHE="$HOME/.cache/chicken/eggs"
+export CHICKEN_INSTALL_REPOSITORY="$HOME/.cache/chicken/install"
+export CHICKEN_REPOSITORY_PATH="/lib/chicken/11/:$HOME/.cache/chicken/install"
