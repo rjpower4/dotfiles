@@ -10,7 +10,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Prompt
+# Prompt ([user@hostname /path/to/current/dir])
 PS1='[\u@\h \W]\$ '
 
 # Bash history files
