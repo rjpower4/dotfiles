@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+
 # Octave History
 export OCTAVE_HISTFILE="$HOME/.cache/octave-history"
 
