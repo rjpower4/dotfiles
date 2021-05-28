@@ -100,7 +100,7 @@
        pass                ; password manager for nerds
        pdf                 ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       ;;rgb               ; creating color strings
+       (rgb +rainbowmode)  ; creating color strings
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
@@ -124,20 +124,19 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        (go +lsp)           ; the hipster dialect
-       (haskell +lsp)      ; a language that's lazier than I am
+       ;haskell            ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        (json +lsp)         ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       javascript          ; all(hope(abandon(ye(who(enter(here))))))
        (julia)             ; a better, faster MATLAB
        ;;(kotlin +lsp)     ; a better, slicker Java(Script)
-       (latex +lsp         ; writing papers in Emacs has never been so fun
-              +latexmk)
+       (latex +lsp)        ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
-       ;;lua               ; one-based indices? one-based indices
+       lua                 ; one-based indices? one-based indices
        (markdown           ; writing docs for people to ignore
         +grip
         +pandoc)
@@ -168,7 +167,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       ;;(web +lsp)        ; the tubes
+       (web +lsp)          ; the tubes
        (yaml +lsp)         ; JSON, but readable
 
        :email
@@ -179,7 +178,7 @@
        :app
        ;;calendar
        ;;irc               ; how neckbeards socialize
-       (rss +org)          ; emacs as an RSS reader
+       rss                 ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
