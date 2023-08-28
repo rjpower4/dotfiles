@@ -1,0 +1,30 @@
+# ls
+alias ls='ls --color=auto'
+alias l='ls -l'
+alias ll='ls -lahF'
+alias lls='ls -lahFtr'
+alias la='ls -A'
+alias lc='ls -CF'
+
+# WGET
+alias wget=wget --hsts-file="$HOME/.cache/wget-hsts"
+
+# Safety
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias la='ls -alh'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Git
+alias gs='git status'
+alias gss='git status -s'
+alias ga='git add'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias glol='git log --graph --abbrev-commit --oneline --decorate'
